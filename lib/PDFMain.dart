@@ -152,7 +152,7 @@ class _PdfMainState extends State<PdfMain> {
       pdfLoading = true;
       progress = 0;
     });
-    bool downloaded = await saveVideo(
+    bool downloaded = await downloadPDF(
         "http://www.africau.edu/images/default/sample.pdf",
         "sample "+DateTime.now().toString()+".pdf");
     if (downloaded) {
@@ -174,7 +174,7 @@ class _PdfMainState extends State<PdfMain> {
     });
   }
 
-  Future<bool> saveVideo(String url, String fileName) async {
+  Future<bool> downloadPDF(String url, String fileName) async {
     Directory directory;
 
 
@@ -201,7 +201,7 @@ class _PdfMainState extends State<PdfMain> {
           return false;
         }
       } else {
-        if (await _requestPermission(Permission.photos)) {
+        if (await _requestPermission(Permission.storage)) {
           directory = await getTemporaryDirectory();
         } else {
           return false;
