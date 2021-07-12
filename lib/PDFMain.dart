@@ -34,7 +34,7 @@ class _PdfMainState extends State<PdfMain> {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
-          appBar: AppBar(title:Text("Pdf and Qrcode example"),),
+          appBar: AppBar(title:Text("Pdf and Qrcodes example"),),
       body: Container(
         margin: EdgeInsets.only(top: 40),
         height: double.infinity,
